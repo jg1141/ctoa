@@ -1,0 +1,6 @@
+dist
+.env
+*.json
+*.egg-info
+*.sqlite
+client_secrets.json
