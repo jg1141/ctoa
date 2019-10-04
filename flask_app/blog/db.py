@@ -15,7 +15,7 @@ class Post(db.Model):
     """A blog post."""
     id = db.Column(db.Integer, primary_key=True)
     author_id = db.Column(db.Text, nullable=False)
-    categoryId = db.Column(db.Text, nullable=False)
+    category = db.Column(db.Text, nullable=False)
     created = db.Column(db.DateTime, default=datetime.utcnow)
     slug = db.Column(db.Text, nullable=False)
     title = db.Column(db.Text, nullable=False)
@@ -26,6 +26,16 @@ class Post(db.Model):
 
     def __repr__(self):
         return "<Post %r (%r)>" % (self.title, self.created)
+
+
+class Category(db.Model):
+    """A post category."""
+    categoryId = db.Column(db.Integer, primary_key=True)
+    category = db.Column(db.Text, nullable=False)
+    created = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def __repr__(self):
+        return "<Category %r (%r)>" % (self.categoryId, self.created)
 
 
 @command("init-db")

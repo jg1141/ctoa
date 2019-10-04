@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+<h2 class="text-center">Edit Categories</h2>
+<div class="row">
+    <div class="offset-sm-2 col-sm-8">
+        <form method="post">
+            <div class="form-group">
+                <label for="category_list">List of Categories (separated by commas)</label>
+                <input class="form-control" id="category_list" type="text" name="category_list" value="{{ category_list }}">
+            </div>
+
+            <button class="btn btn-primary submit-btn" type="submit">Update</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
