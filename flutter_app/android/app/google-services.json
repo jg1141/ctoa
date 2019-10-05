@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "697649373302",
+    "firebase_url": "https://ctoa-58dcb.firebaseio.com",
+    "project_id": "ctoa-58dcb",
+    "storage_bucket": "ctoa-58dcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:697649373302:android:b8d65be18957e5b2953f57",
+        "android_client_info": {
+          "package_name": "com.example.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "697649373302-svptltciumbeeufm18c033go2ubfc22o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVOBdVoTkcYvN1hAylfb_26rNz-xNebdA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "697649373302-svptltciumbeeufm18c033go2ubfc22o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
