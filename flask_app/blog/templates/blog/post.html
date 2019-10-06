@@ -9,6 +9,9 @@
       <div class="body"><img src="{{ post.imageUrl|safe }}"></div>
       <div class="body"><a href="{{ post.articleUrl|safe }}">{{ post.title|safe }}</a></div>
       <div class="body">{{ post.description|safe }}</div>
+      {% if post.forName %}
+      <div class="body">For: {{ post.forName|safe }}</div>
+      {% endif %}
       <hr>
       <p class="author">Written by {{ post.author_name }}</p>
     </div>

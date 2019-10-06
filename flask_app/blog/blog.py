@@ -8,12 +8,18 @@ from .auth import oidc, okta_client
 from .db import Category, Post, db
 
 DEFAULT_IMAGEURL = "http://ec2-52-63-254-177.ap-southeast-2.compute.amazonaws.com:5000/static/placeholder.jpg"
+ADMIN_AUTHOR_ID = "00u1iuuhdfKa65SeN357"
 
 bp = Blueprint("blog", __name__, url_prefix="/")
 
 
-def recent_posts():
-    return Post.query.order_by(Post.created.desc())
+def recent_posts(authorid = ''):
+    if authorid == ADMIN_AUTHOR_ID:
+        # No Filter
+        return Post.query.order_by(Post.created.desc())
+    else:
+        return Post.query.filter_by(author_id=authorid).order_by(Post.created.desc())
+
 
 
 @bp.route("/")
@@ -50,7 +56,7 @@ def dashboard():
         categories.append(cat.category)
 
     if request.method == "GET":
-        return render_template("blog/dashboard.html", posts=recent_posts(), categories=categories)
+        return render_template("blog/dashboard.html", posts=recent_posts(g.user.id), categories=categories)
 
     post = Post(
         category=request.form.get("category"),
@@ -59,7 +65,8 @@ def dashboard():
         imageUrl=request.form.get("imageUrl"),
         description=request.form.get("description"),
         author_id=g.user.id,
-        slug=slugify(request.form.get("title"))
+        slug=slugify(request.form.get("title")),
+        forName=request.form.get("forName")
     )
 
     post = add_defaults(post)
@@ -67,7 +74,7 @@ def dashboard():
     db.session.add(post)
     db.session.commit()
 
-    return render_template("blog/dashboard.html", posts=recent_posts(), categories=categories)
+    return render_template("blog/dashboard.html", posts=recent_posts(g.user.id), categories=categories)
 
 
 @bp.route("/<slug>")
@@ -94,7 +101,10 @@ def edit_post(slug):
         abort(404)
 
     if post.author_id != g.user.id:
-        abort(403)
+        if g.user.id == ADMIN_AUTHOR_ID:
+            pass
+        else:
+            abort(403)
 
     post.author_name = g.user.profile.firstName + " " + g.user.profile.lastName
 
@@ -110,7 +120,7 @@ def edit_post(slug):
     post.description = request.form.get("description")
     post.articleUrl = request.form.get("articleUrl")
     post.imageUrl = request.form.get("imageUrl")
-    post.mediaType = "MediaType.video"
+    post.forName = request.form.get("forName")
     post.slug = slugify(request.form.get("title"))
 
     post = add_defaults(post)
@@ -170,7 +180,10 @@ def delete_post(slug):
         abort(404)
 
     if post.author_id != g.user.id:
-        abort(403)
+        if g.user.id == ADMIN_AUTHOR_ID:
+            pass
+        else:
+            abort(403)
 
     db.session.delete(post)
     db.session.commit()
@@ -179,7 +192,8 @@ def delete_post(slug):
 
 
 @bp.route('/summary')
-def summary():
+@bp.route('/summary/<for_name>')
+def summary(for_name=''):
     # d = {"category": 1,
     #      "id": 1,
     #      "title": "my title here",
@@ -187,7 +201,7 @@ def summary():
     #      "articleUrl": "https://www.youtube.com/user/CrescendoTrust",
     #    "imageUrl": "https://yt3.ggpht.com/a/AGF-l788tRHGrwFIbie4I_uPR8g3OKd9dJBVgt16LA=s288-c-k-c0xffffffff-no-rj-mo",
     #      "mediaType": "MediaType.video"}
-    posts = recent_posts()
+    posts = recent_posts(authorid=ADMIN_AUTHOR_ID)  # Subject to forName filter below
     posts_final = []
     """
     Aiming for Repository - list of Categories
@@ -197,6 +211,11 @@ def summary():
     category_dict = {}
 
     for post in posts:
+        if len(post.forName.strip()) > 0:
+            if post.forName.strip() == for_name:
+                pass
+            else:
+                continue
         u = okta_client.get_user(post.author_id)
         post.author_name = u.profile.firstName + " " + u.profile.lastName
         if post.category not in category_dict:

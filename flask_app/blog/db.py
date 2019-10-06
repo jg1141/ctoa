@@ -22,7 +22,7 @@ class Post(db.Model):
     description = db.Column(db.Text, nullable=True)
     articleUrl = db.Column(db.Text, nullable=True)
     imageUrl = db.Column(db.Text, nullable=True)
-    mediaType = db.Column(db.Text, nullable=True)
+    forName = db.Column(db.Text, nullable=True)
 
     def __repr__(self):
         return "<Post %r (%r)>" % (self.title, self.created)
