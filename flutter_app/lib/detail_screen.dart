@@ -75,22 +75,11 @@ class DetailScreenState extends State<DetailScreen> {
                     Table(
                       children: <TableRow>[
                         TableRow(children: [
-                          Text("Summary:"),
+                          Text("Summary:\n"),
+                        ]),
+                        TableRow(children: [
                           Text(widget.article.description)
                         ]),
-                        TableRow(children: [
-                          Text(""),
-                          Text("")
-                        ]),
-                        TableRow(children: [
-                          Text("Tags:"),
-                          Text("Learning, Images")
-                        ]),
-                        TableRow(children: [
-                          Text(""),
-                          Text("")
-                        ]),
-                        TableRow(children: [Text("Likes:"), Text("224")])
                       ],
                     )
                   ],

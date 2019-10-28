@@ -230,7 +230,7 @@ def summary(for_name=''):
                      'title': post.title}
         category_dict[post.category]['articles'].append(post_dict)
 
-    for category in category_dict:
+    for category in sorted(category_dict.keys()):
         posts_final.append(category_dict[category])
 
     json_string = json.dumps({'categories': posts_final}, ensure_ascii=False)
