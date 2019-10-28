@@ -62,6 +62,7 @@ class DetailScreenState extends State<DetailScreen> {
                       onPressed: () {
                         launch(widget.article.articleUrl);
                       },
+                      backgroundColor: Colors.red,
                     ),
                     transform: Matrix4.translationValues(-16.0, -30.0, 0.0),
                   ),

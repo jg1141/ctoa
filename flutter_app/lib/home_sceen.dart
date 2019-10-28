@@ -96,7 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
           // By default, show a loading spinner.
           return Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator(
+              valueColor: new AlwaysStoppedAnimation<Color>(Colors.white),
+            ),
           );
         },
       ),
