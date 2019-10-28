@@ -10,9 +10,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'CTOA',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: 'Raleway',
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -23,6 +25,9 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
+          buttonTheme: ButtonThemeData(
+            buttonColor: Colors.red,
+          )
       ),
       home: HomeScreen(repository: fetchRepository(),),
       // home: SearchScreen(),

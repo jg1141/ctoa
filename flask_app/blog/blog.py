@@ -7,7 +7,7 @@ from slugify import slugify
 from .auth import oidc, okta_client
 from .db import Category, Post, db
 
-DEFAULT_IMAGEURL = "http://ec2-52-63-254-177.ap-southeast-2.compute.amazonaws.com:5000/static/placeholder.jpg"
+DEFAULT_IMAGEURL = "http://ec2-52-63-254-177.ap-southeast-2.compute.amazonaws.com:5000/static/placeholder.png"
 ADMIN_AUTHOR_ID = "00u1iuuhdfKa65SeN357"
 
 bp = Blueprint("blog", __name__, url_prefix="/")

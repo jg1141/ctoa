@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="862b2377-f340-4ded-becb-a834ff277cbd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../flutter_app/lib/detail_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../flutter_app/lib/detail_screen.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../flutter_app/fonts/Raleway-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../flutter_app/fonts/Raleway-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../flutter_app/lib/home_sceen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../flutter_app/lib/home_sceen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../flutter_app/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../flutter_app/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../flutter_app/lib/section/about_section.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../flutter_app/lib/section/about_section.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../flutter_app/lib/section/profile_section.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../flutter_app/lib/section/profile_section.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../flutter_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../flutter_app/pubspec.yaml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blog.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="232" column="48" selection-start-line="232" selection-start-column="48" selection-end-line="232" selection-end-column="48" />
+            <state relative-caret-position="68">
+              <caret line="9" column="108" selection-start-line="9" selection-start-column="108" selection-end-line="9" selection-end-column="108" />
             </state>
           </provider>
         </entry>
@@ -106,6 +111,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>place</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -297,8 +307,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blog.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="232" column="48" selection-start-line="232" selection-start-column="48" selection-end-line="232" selection-end-column="48" />
+        <state relative-caret-position="68">
+          <caret line="9" column="108" selection-start-line="9" selection-start-column="108" selection-end-line="9" selection-end-column="108" />
         </state>
       </provider>
     </entry>

@@ -51,7 +51,7 @@ class AboutSection extends StatelessWidget {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 18.0,
-                    color: Colors.blue)),
+                    color: Colors.red)),
             onTap: () {
               _launchURL('https://docs.google.com/forms/d/e/1FAIpQLSdOF88V32z6t4My4qSt0wDr7TTU52Fn0YacCjxZx4Fp5rxa1g/viewform');
             },

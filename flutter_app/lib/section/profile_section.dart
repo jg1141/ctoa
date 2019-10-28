@@ -71,7 +71,7 @@ class ProfileSectionState extends State<ProfileSection> {
         Center(
           child: InkWell(
             child: Text("Need an okta account? Create one here.",
-                style: TextStyle(fontSize: 16.0, color: Colors.blue)),
+                style: TextStyle(fontSize: 16.0)),
             onTap: () {
               _launchURL('https://dev-384355.okta.com/signin/register');
             },
